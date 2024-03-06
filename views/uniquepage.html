@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        h1 {
+            color: orangered;
+            margin-bottom: -5px;
+        }
+        p {
+            margin-bottom: -10px;
+        }
+        .ui {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+        }
+        .cell {
+            border: none;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .cell:active {
+            outline: none;
+        }
+        #t1 {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        #t2 {
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+        #t3 {
+            border-bottom: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+        #t4 {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        #t5 {
+            border: 1px solid gray;
+        }
+        #t6 {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+        #t7 {
+            border-top: 1px solid gray;
+            border-right: 1px solid gray;
+        }
+        #t8 {
+            border-top: 1px solid gray;
+            border-right: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+        #t9 {
+            border-top: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+        #rst {
+            box-sizing: border-box;
+            width: 95px;
+            height: 40px;
+            border: 1px solid dodgerblue;
+            margin-left: auto;
+            border-radius: 8px;
+            font-family: Verdana;
+            background-color: whitesmoke;
+            color: dodgerblue;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #main {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>TIC TAC TOE</h1>
+        <br><br>
+        <div class="ui">
+            <div class="row">
+                <input type="text" id="t1" class="cell" onclick="cellClicked('t1');" readonly>
+                <input type="text" id="t2" class="cell" onclick="cellClicked('t2');" readonly>
+                <input type="text" id="t3" class="cell" onclick="cellClicked('t3');" readonly>
+            </div>
+            <div class="row">
+                <input type="text" id="t4" class="cell" onclick="cellClicked('t4');" readonly>
+                <input type="text" id="t5" class="cell" onclick="cellClicked('t5');" readonly>
+                <input type="text" id="t6" class="cell" onclick="cellClicked('t6');" readonly>
+            </div>
+            <div class="row">
+                <input type="text" id="t7" class="cell" onclick="cellClicked('t7');" readonly>
+                <input type="text" id="t8" class="cell" onclick="cellClicked('t8');" readonly>
+                <input type="text" id="t9" class="cell" onclick="cellClicked('t9');" readonly>
+            </div>
+        </div>
+        <br><br><br>
+        <button id="rst" onclick="restart()"> RESET </button>
+        <br><br>
+    </div>
+    <script>
+        let flag = 1;
+
+        function cellClicked(id) {
+            const cell = document.getElementById(id);
+            if (!cell.value) {
+                cell.value = flag === 1 ? 'X' : 'O';
+                cell.disabled = true;
+                flag = 1 - flag;
+                tableFunc();
+            }
+        }
+
+        function restart() {
+            location.reload();
+        }
+
+        function tableFunc() {
+            const cells = ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9'];
+            const combinations = [['t1', 't2', 't3'], ['t4', 't5', 't6'], ['t7', 't8', 't9'], ['t1', 't4', 't7'], ['t2', 't5', 't8'], ['t3', 't6', 't9'], ['t1', 't5', 't9'], ['t3', 't5', 't7']];
+            const isDraw = cells.every(id => document.getElementById(id).value);
+            for (const combination of combinations) {
+                const [id1, id2, id3] = combination;
+                const cell1 = document.getElementById(id1).value;
+                const cell2 = document.getElementById(id2).value;
+                const cell3 = document.getElementById(id3).value;
+                if (cell1 && cell1 === cell2 && cell2 === cell3) {
+                    document.getElementById(id1).style.color = 'red';
+                    document.getElementById(id2).style.color = 'red';
+                    document.getElementById(id3).style.color = 'red';
+                    cells.filter(id => ![id1, id2, id3].includes(id)).forEach(id => document.getElementById(id).disabled = true);
+                    setTimeout(() => alert(`${cell1} is the winner`), 50);
+                    return;
+                }
+            }
+            if (isDraw) {
+                setTimeout(() => alert('The match is draw'), 50);
+            }
+        }
+    </script>
+</body>
+</html>

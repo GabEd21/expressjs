@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body {
+    font-family: "Lato", sans-serif;
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/953/937/desktop-wallpaper-computer-science-%C2%B7%E2%91%A0-full-backgrounds-for-computer-engineer.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.card-content {
+    padding: 20px;
+}
+.card-content h2 {
+    margin-top: 0;
+}
+.skills {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.skills-bar {
+    flex: 1;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skills-bar-inner {
+    height: 8px;
+    background-color: #4CAF50;
+}
+.skills-text {
+    margin-left: 10px;
+}
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.social-icons {
+    margin-top: 10px;
+}
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="w3-row-padding">
+        <div class="w3-third">
+            <div class="card">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocKV6rVGDrZQPbEDTaeCfGOL9lg-BxRlMEoAA0W5BCTxmQ=s288-c-no" alt="Avatar">
+                <div class="card-content">
+                    <h2>Christian Dumandan</h2>
+                    <p><i class="fa fa-home fa-fw w3-margin-right w3-text-teal"></i>Philippines, Catalunan Grande Davao City</p>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-text-teal"></i>cegsdumandan@addu.edu.ph</p>
+                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-text-teal"></i>09308825541</p>
+                    <hr>
+                    <div class="skills">
+                        <div class="skills-bar">
+                            <div class="skills-bar-inner" style="width:90%"></div>
+                        </div>
+                        <div class="skills-text">Bakakon</div>
+                    </div>
+                    <div class="skills">
+                        <div class="skills-bar">
+                            <div class="skills-bar-inner" style="width:80%"></div>
+                        </div>
+                        <div class="skills-text">ChatGpt</div>
+                    </div>
+                    <div class="skills">
+                        <div class="skills-bar">
+                            <div class="skills-bar-inner" style="width:75%"></div>
+                        </div>
+                        <div class="skills-text">Canva</div>
+                    </div>
+                    <div class="skills">
+                        <div class="skills-bar">
+                            <div class="skills-bar-inner" style="width:50%"></div>
+                        </div>
+                        <div class="skills-text">Flutter</div>
+                    </div>
+                    <hr>
+                    <h3>Languages</h3>
+                    <p>English</p>
+                    <p>Tagalog</p>
+                    <p>Bisaya</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-twothird">
+            <div class="card">
+                <div class="card-content">
+                    <h2><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experience</h2>
+                    <div>
+                        <h3>Flutter</h3>
+                        <p>Know how to input and output from the database</p>
+                    </div>
+                    <div>
+                        <h3>Full Stack Developer</h3>
+                        <p>Know at least to input, delete, edit data</p>
+                    </div>
+                    <div>
+                        <h3>Flask Developer</h3>
+                        <p>Make sense ang code pero dili gumana, i know at least to input, delete, and to edit data from the databse SQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+                    <div>
+                        <h3>Ateneo de Davao University</h3>
+                        <p>3rd year College pa</p>
+                    </div>
+                    <div>
+                        <h3>Ateneo de Davao Senior High School</h3>
+                        <p>Graduated from Senior High School / Good Moral</p>
+                    </div>
+                    <div>
+                        <h3>Holy Cross of Mintal</h3>
+                        <p>Good Moral</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/cegdumandan" target="_blank"><i class="fa fa-facebook-official"></i></a>
+        <!-- Add more social media icons and links as needed -->
+    </div>
+    <p>Powered by <a href="https://chat.openai.com/c/21003d4a-0479-46a3-90de-8040399d087b" target="_blank">ChatGpt</a></p>
+</footer>
+
+</body>
+</html>

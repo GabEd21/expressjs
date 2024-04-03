@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include(`../partials/head.ejs`); %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .flag{
+        margin-top: 50px;
+        border: 3px solid greenyellow;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1>This is Davao</h1>
+    <main>
+        <center>
+            <div>
+                <img class= "flag" src="https://cdn-icons-png.flaticon.com/512/197/197561.png?fbclid=IwAR1hDgGbCCzVehC0OmSvvqNf7PEhm6_LYJmHjxLkp_ICct0rEeMCYfe7o8c_aem_AZxmSO_ioiuzrjZHk1JVC-DyvWe2bsvSoaBEIdYijQkjhOENroxd7TXiANMmDisuu_6D6ZMVEw57Pg52pxfQM9IY"/>
+                <%=  weatherdavao[0].location.name %>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Day </td>
+                            <td>Date </td>
+                            <td>Weather Icon </td>
+                            <td>Icon </td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="table-dark">
+                            <td scope="row">Today</td>
+                            <td><%= weatherdavao[1].current.date %></td>
+                            <td><%= weatherdavao[1].current.skytext %></td>
+                            <td><img src="<%= weatherdavao[1].current.imageURL %>"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><%= weatherdavao[1].forecast[1].day %></td>
+                            <td><%= weatherdavao[1].forecast[2].date %></td>
+                            <td><%= weatherdavao[1].forecast[2].skytextday %></td>
+                            <td><img src="<%= weatherdavao[1].forecast[2].imageURL %>"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </center>
+    </main>
+
+</body>
+</html>

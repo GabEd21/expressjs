@@ -35,6 +35,7 @@ app.get('/davao', (req, res) => {
 });
 
 app.get('/canada', (req, res) => {
+<<<<<<< HEAD
     weather.find({search: 'Canada', degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
         else{
@@ -42,10 +43,22 @@ app.get('/canada', (req, res) => {
                 weathercanada: eval(JSON.stringify(result, null, 2))
             }
             res.render('canada', data)
+=======
+    weather.find({ search: 'Toronto, Canada', degreeType: 'F' }, function(err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Internal Server Error'); // Handle the error
+        } else {
+            let data = {
+                weathertoronto: JSON.parse(JSON.stringify(result, null, 2))
+            };
+            res.render('toronto', data); 
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
         }
     });
 });
 
+<<<<<<< HEAD
 app.get('/japan', (req, res) => {
     weather.find({search: 'Japan', degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
@@ -81,6 +94,8 @@ app.get('/singapore', (req, res) => {
         }
     });
 });
+=======
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
 
 app.get('/index', (req, res) => {
     res.render('index', { username: 'John', para: 'paragraph' });

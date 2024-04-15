@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
@@ -53,6 +54,45 @@
         <div>
             <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Mexico.png"/>
             <%=  weathercanada[0].location.name %>
+=======
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/davao">Philippines</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Canada</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Japan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">South Korea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">United States</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<h1>This is Toronto, Canada</h1>
+<main>
+    <center>
+        <div>
+            <img class="flag" src="https://cdn-icons-png.flaticon.com/512/197/197561.png?fbclid=IwAR1hDgGbCCzVehC0OmSvvqNf7PEhm6_LYJmHjxLkp_ICct0rEeMCYfe7o8c_aem_AZxmSO_ioiuzrjZHk1JVC-DyvWe2bsvSoaBEIdYijQkjhOENroxd7TXiANMmDisuu_6D6ZMVEw57Pg52pxfQM9IY"/>
+            <%=  weathertoronto[0].location.name %>
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -66,6 +106,7 @@
                 <tbody>
                     <tr class="table-dark">
                         <td scope="row">Today</td>
+<<<<<<< HEAD
                         <td><%= weathercanada[1].current.date %></td>
                         <td><%= weathercanada[1].current.skytext %></td>
                         <td><img src="<%= weathercanada[1].current.imageUrl %>"></td>
@@ -75,6 +116,17 @@
                         <td><%= weathercanada[1].forecast[2].date %></td>
                         <td><%= weathercanada[1].forecast[2].skytextday %></td>
                         <td><img src="<%= weathercanada[1].current.imageUrl %>"></td>
+=======
+                        <td><%= weathertoronto[1].current.date %></td>
+                        <td><%= weathertoronto[1].current.skytext %></td>
+                        <td><img src="<%= weathertoronto[1].current.imageUrl %>"></td>
+                    </tr>
+                    <tr>
+                        <td scope="row"><%= weathertoronto[1].forecast[1].day %></td>
+                        <td><%= weathertoronto[1].forecast[2].date %></td>
+                        <td><%= weathertoronto[1].forecast[2].skytextday %></td>
+                        <td><img src="<%= weathertoronto[1].current.imageUrl %>"></td>
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
                     </tr>
                 </tbody>
 
@@ -83,4 +135,8 @@
     </center>
 </main>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e

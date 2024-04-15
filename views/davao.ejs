@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
@@ -47,6 +48,39 @@
           </div>
         </div>
       </nav>
+=======
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Philippines</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Canada</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Japan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">South Korea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">United States</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
 <h1>This is Philippines</h1>
 <main>
     <center>
@@ -68,6 +102,7 @@
                         <td scope="row">Today</td>
                         <td><%= weatherdavao[1].current.date %></td>
                         <td><%= weatherdavao[1].current.skytext %></td>
+<<<<<<< HEAD
                         <td><img src="<%= weatherdavao[0].current.imageUrl %>"></td>
                     </tr>
                     <tr>
@@ -87,6 +122,15 @@
                         <td><%= weatherdavao[0].forecast[3].date %></td>
                         <td><%= weatherdavao[0].forecast[3].skytextday %></td>
                         <td><img src="<%= weatherdavao[0].current.imageUrl %>"></td>
+=======
+                        <td><img src="<%= weatherdavao[1].current.imageUrl %>"></td>
+                    </tr>
+                    <tr>
+                        <td scope="row"><%= weatherdavao[1].forecast[1].day %></td>
+                        <td><%= weatherdavao[1].forecast[2].date %></td>
+                        <td><%= weatherdavao[1].forecast[2].skytextday %></td>
+                        <td><img src="<%= weatherdavao[1].current.imageUrl %>"></td>
+>>>>>>> c6147e99a524e6ff38b30e3b67bc580f1c9dfd0e
                     </tr>
                 </tbody>
 

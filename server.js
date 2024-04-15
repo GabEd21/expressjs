@@ -30,6 +30,19 @@ app.get('/davao', (req, res) => {
     });
 });
 
+app.get('/canada', (req, res) => {
+    weather.find({search: 'Canada', degreeType: 'F'}, function(err, result) {
+        if(err) console.log(err);
+        else{
+            let data = {
+                weathercanada: eval(JSON.stringify(result, null, 2))
+            }
+            res.render('canada', data)
+        }
+    });
+});
+
+
 app.get('/index', (req, res) => {
     res.render('index', { username: 'John', para: 'paragraph' });
 });

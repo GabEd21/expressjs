@@ -31,13 +31,15 @@ app.get('/davao', (req, res) => {
 });
 
 app.get('/canada', (req, res) => {
-    weather.find({search: 'Canada', degreeType: 'F'}, function(err, result) {
-        if(err) console.log(err);
-        else{
+    weather.find({ search: 'Toronto, Canada', degreeType: 'F' }, function(err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Internal Server Error'); // Handle the error
+        } else {
             let data = {
-                weathercanada: eval(JSON.stringify(result, null, 2))
-            }
-            res.render('canada', data)
+                weathertoronto: JSON.parse(JSON.stringify(result, null, 2))
+            };
+            res.render('toronto', data); 
         }
     });
 });

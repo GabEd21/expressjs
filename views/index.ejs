@@ -6,7 +6,12 @@
     <title>Home</title>
 </head>
 <body>
-    <h1><%= username %></h1>
-    <p><%= para %></p>
+
+    <% for (let i = 0; i < itemData.length; i++) { %>
+        <h3><%= itemData[i].data()['name']%></h3>
+        <% for (let j = 0; j < itemData[i].data()['sing'].length; j++) { %>
+            <h1><%= itemData[i].data()['sing'][j]%></h1>
+        <% } %>
+    <% } %>
 </body>
 </html>

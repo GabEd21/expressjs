@@ -7,7 +7,8 @@ admin.initializeApp({
 });
 const db = admin.firestore()
 const schema = db.collection(`schema`)
-
+const cors = require('cors');
+const student = db.collection(`student`);
 
 
 // server.js
@@ -17,6 +18,21 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
+
+app.use(
+    cors({
+        origin: true,
+        credential: true,
+        optionSuccessStatus: 200
+    })
+)
+
+app.get('/', async (req,res) => {
+    const studentSnapshot = await student.get();
+    const studentsList = studentSnapshot.docs.map(doc => doc.data());
+    res.json(studentsList)
+})
+
 
 
 var weather = require('weather-js');

@@ -17,7 +17,7 @@ const student = db.collection(`student`);
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = 2000;
 
 app.use(
     cors({
@@ -26,6 +26,25 @@ app.use(
         optionSuccessStatus: 200
     })
 )
+
+app.use(express.json());
+
+app.post('/addstudent', async function (req,res){
+    const {name, age, course, subjects} = req.body
+    try{
+        const docRef = await student.add({
+            name,
+            age,
+            course,
+            subjects
+        })
+        console.log(docRef.id)
+
+    }catch (error) {
+        console.error('Error adding student', error);
+        res.status(500).json({error: 'Failed to add student'})
+    }
+})
 
 app.get('/', async (req,res) => {
     const studentSnapshot = await student.get();
